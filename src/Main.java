@@ -1,23 +1,34 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        double x = 25;
-        double y = 2;
-        char control = '+';
+        Scanner scanner = new Scanner(System.in);
+        Scanner scr = new Scanner(System.in);
+        System.out.print("Digite um número: ");
+        double num1 = scanner.nextDouble();
 
-        resolution(x, y, control);
+        System.out.print("Digite um segundo número: ");
+        double num2 = scanner.nextDouble();
+
+        System.out.println("Escolhe uma operação entre: +, -, *, / ");
+        char operation = scr.next().charAt(0);
+
+        resolution(num1, num2, operation);
     }
-    public static void resolution(double x, double y, char control) {
-        if (control == '+') {
-            System.out.println(x + " + " + y + " = " + (x + y));
-        } else if (control == '-') {
-            System.out.println(x + " - " + y + " = " + (x - y));
-        } else if (control == '*') {
-            System.out.println(x + " * " + y + " = " + (x * y));
-        } else if (control == '/') {
-            if (y == 0) {
-                System.out.println("Erro");
+
+    public static void resolution(double num1, double num2, char operation) {
+
+        if (operation == '+') {
+            System.out.println(num1 + " + " + num2 + " = " + (num1 + num2));
+        } else if (operation == '-') {
+            System.out.println(num1 + " - " + num2 + " = " + (num1 - num2));
+        } else if (operation == '*') {
+            System.out.println(num1 + " * " + num2 + " = " + (num1 * num2));
+        } else if (operation == '/') {
+            if (num2 == 0) {
+                System.out.println("Meu amor, um número não pode ser dividido por zero! =)");
             } else {
-                System.out.println(x + " / " + y + " = " + (x / y));
+                System.out.println(num1 + " / " + num2 + " = " + (num1 / num2));
             }
         }
     }
